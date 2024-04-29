@@ -219,8 +219,8 @@ jobs:
           - tt_um_zhwa_rgb_mixer
     runs-on: ubuntu-latest
     env:
-      OPENLANE_TAG: 2024.04.02
-      OPENLANE_IMAGE_NAME: efabless/openlane:2024.04.02
+      OPENLANE_TAG: 2024.04.22
+      OPENLANE_IMAGE_NAME: efabless/openlane:2024.04.22
       OPENLANE_ROOT: /home/runner/openlane
       PDK_ROOT: /home/runner/pdk
       PDK: sky130A
