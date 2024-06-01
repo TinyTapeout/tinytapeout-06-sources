@@ -219,8 +219,8 @@ jobs:
           - tt_um_zhwa_rgb_mixer
     runs-on: ubuntu-latest
     env:
-      OPENLANE_TAG: 2024.04.02
-      OPENLANE_IMAGE_NAME: efabless/openlane:2024.04.02
+      OPENLANE_TAG: 2024.05.28
+      OPENLANE_IMAGE_NAME: efabless/openlane:2024.05.28
       OPENLANE_ROOT: /home/runner/openlane
       PDK_ROOT: /home/runner/pdk
       PDK: sky130A
@@ -259,7 +259,7 @@ jobs:
           docker run --rm -v $OPENLANE_ROOT:/openlane \
               -v $PDK_ROOT:$PDK_ROOT -v $(pwd):/work -e PDK=$PDK -e PDK_ROOT=$PDK_ROOT \
               -u $(id -u $USER):$(id -g $USER) $OPENLANE_IMAGE_NAME \
-              /bin/bash -c "./flow.tcl -overwrite -design /work/src -run_path /work/runs -tag wokwi"
+              ./flow.tcl -overwrite -design /work/src -run_path /work/runs -tag wokwi
 
           if ! grep -q "\[SUCCESS\]: Flow complete." runs/wokwi/openlane.log; then
             exit 1
